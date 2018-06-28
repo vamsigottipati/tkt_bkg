@@ -1,14 +1,24 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<ion-header padding text-center>
+  
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-list>
+    
+    <ion-item>
+      <ion-label floating color="primary">username</ion-label>
+      <ion-input [(ngModel)]="adminName" class="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" class="password"></ion-input>
+    </ion-item>
+   
+    <ion-item>
+      <div><button class="login" ion-button color="dark" round (click)="login()">login</button></div>
+      <div><button  class="booking" ion-button color="light" round>booking</button></div>
+    </ion-item>
+
+  </ion-list>
 </ion-content>

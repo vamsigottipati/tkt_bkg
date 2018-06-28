@@ -1,3 +1,37 @@
 page-home {
 
+    ion-content *{
+        text-align:center;
+        
+    }
+    
+    
+    ion-header  {
+        background: url("../assets/imgs/logo-feature-1300x732.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .login{
+         
+        background-color: black;
+        width: 40%;
+        height:10%;
+        
+    }
+    
+    .booking{
+        width:40%;
+        height:50px;
+        background-color: slategray;
+    }
+
+    .login:hover{
+        background-color: crimson;
+    }
+
+    .booking:hover{
+        background-color:crimson;
+    }
 }
+

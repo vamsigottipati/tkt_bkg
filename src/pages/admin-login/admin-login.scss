@@ -1,0 +1,28 @@
+page-admin-login {
+       ion-content {
+        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+        text-align:center;
+       }
+
+       .users{
+           text-align:center;
+           background-color: dimgray;
+           width:40%;
+           height:40px;;
+       }
+
+       .movies{
+           text-align:center;
+           background-color: darkgrey;
+           width:40%;
+           height:40px;
+       }
+
+       .users:hover {
+           background-color: crimson;
+       }
+
+       .movies:hover{
+        background-color: crimson;
+       }
+}
