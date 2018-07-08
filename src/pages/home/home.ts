@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import {AdminLoginPage} from "../admin-login/admin-login"
+import {AdminLoginPage} from "../admin-login/admin-login";
+import { User } from "../../models/user";
+
+import { AngularFireAuth } from "angularfire2/auth"
 
 @Component({
   selector: 'page-home',
@@ -9,15 +12,27 @@ import {AdminLoginPage} from "../admin-login/admin-login"
 })
 export class HomePage {
 
+  user = {} as User;
+
   adminName:string;
   password:string;
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    private afauth: AngularFireAuth,
+    public navCtrl: NavController) {
 
   }
 
-  login(){
-    this.navCtrl.push(AdminLoginPage);
+  login(user: User){
+    this.afauth.auth.signInWithEmailAndPassword(user.email, user.password).then(
+      data => {
+        this.navCtrl.push(AdminLoginPage);
+      }
+    )
+    .catch(error => {
+      alert(error)
+    })
+
   }
 
 }

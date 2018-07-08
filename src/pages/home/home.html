@@ -1,24 +1,21 @@
-<ion-header padding text-center>
-  
-</ion-header>
+<div class="wrapper">
 
-<ion-content>
-  <ion-list>
-    
-    <ion-item>
-      <ion-label floating color="primary">username</ion-label>
-      <ion-input [(ngModel)]="adminName" class="username"></ion-input>
-    </ion-item>
+  <!--  Header  -->
+  <header class="section header">
+    <div class="trapezoid"></div>
 
-    <ion-item>
-      <ion-label floating >password</ion-label>
-      <ion-input type="password" [(ngModel)]="password" class="password"></ion-input>
-    </ion-item>
-   
-    <ion-item>
-      <div><button class="login" ion-button color="dark" round (click)="login()">login</button></div>
-      <div><button  class="booking" ion-button color="light" round>booking</button></div>
-    </ion-item>
+    <div class="header__text">
+      <h1>Admin Login</h1>
+      <p>Login to update Movies and a lot More.</p>
+    </div>
+  </header>
 
-  </ion-list>
-</ion-content>
+    <!--  Sign In  -->
+    <section class="section sign-in">
+      <form action="">
+        <input type="text" name="email" [(ngModel)]="user.email" id="adminEmail" placeholder="Email">
+        <input type="password" name="password" id="adminPass" [(ngModel)]="user.password" placeholder="Password">
+        <button (click)="login(user)">Sign In</button>
+      </form>
+    </section>
+</div>

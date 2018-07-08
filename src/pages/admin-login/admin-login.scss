@@ -1,28 +1,62 @@
-page-admin-login {
-       ion-content {
-        background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
-        text-align:center;
-       }
+.page-body {
+    margin-top: 0vh;
+    height: 150vh;
+    overflow : hidden;
+    background-color: khaki;
+}
+.main-card {
+  margin-top: 20vh;
+  margin-left: 5vw;
+  width: 90vw;
+  height: 60vh;
+  background-color: #333;
+}
 
-       .users{
-           text-align:center;
-           background-color: dimgray;
-           width:40%;
-           height:40px;;
-       }
+.btn {
+    position: absolute;
+}
+.bookings {
+  top: 55vh;
+  left: 27.5vw;
+  width: 45vw;
+  height: 10vh;
+}
 
-       .movies{
-           text-align:center;
-           background-color: darkgrey;
-           width:40%;
-           height:40px;
-       }
+.add-movies {
+  top: 35vh;
+  left: 27.5vw;
+  width: 45vw;
+  height: 10vh;
+}
 
-       .users:hover {
-           background-color: crimson;
-       }
+.pulse:hover,
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
 
-       .movies:hover{
-        background-color: crimson;
-       }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+$colors: (
+  pulse: #488aff,
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+
+  &:hover,
+  &:focus {
+    border-color: var(--hover);
+    color: #fff;
+  }
 }

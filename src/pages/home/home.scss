@@ -1,37 +1,131 @@
-page-home {
+// Colors
+$c-blue: #1126be;
+$c-white: #fefefe;
 
-    ion-content *{
-        text-align:center;
-        
-    }
-    
-    
-    ion-header  {
-        background: url("../assets/imgs/logo-feature-1300x732.jpg");
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
+// Transparent Colors
+$t-blue: rgba(17, 38, 190, 0.8);
 
-    .login{
-         
-        background-color: black;
-        width: 40%;
-        height:10%;
-        
-    }
-    
-    .booking{
-        width:40%;
-        height:50px;
-        background-color: slategray;
-    }
+// Gradients
+$g-blue: linear-gradient($t-blue, $t-blue);
 
-    .login:hover{
-        background-color: crimson;
-    }
+// Shadows
+$s-basic: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
-    .booking:hover{
-        background-color:crimson;
-    }
+
+// Imports
+@import url('https://fonts.googleapis.com/css?family=Nunito:300');
+
+
+// Resets
+* {
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
+
+body {
+  margin: 0;
+  padding-bottom: 20px;
+  font-family: 'Nunito', sans-serif;
+  color: $c-white;
+  background: $c-white;
+  overflow: hidden;
+}
+
+
+// Global Layout
+.wrapper {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: $s-basic;
+  top: 10vh;
+}
+
+.section {
+  padding: 1rem;
+}
+
+// Header Styles
+.header {
+  position: relative;
+  text-align: center;
+  height : 60vh;
+
+  &__text {
+    margin-top:20vh;
+    position: relative;
+    padding: 3.5rem 0 7rem ;
+
+    > h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+  }
+
+  > .trapezoid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skewY(-8deg);
+    transform-origin: top left;
+    box-shadow: $s-basic;
+    background: $g-blue;
+    background-position: top center;
+    background-attachment: fixed;
+  }
+}
+
+// Form, input and button styles
+form {
+  margin: 0 auto;
+  max-width: 17rem;
+  overflow: auto;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+
+  > input {
+    border: 0;
+    border-bottom: 1px solid $c-blue;
+    border-radius: 0;
+    width: 100%;
+    height: 3rem;
+    padding: 0 0 0.25rem 0;
+    font-size: 1.5rem;
+    color: $c-blue;
+    background: $c-white;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $c-blue;
+    }
+  }
+
+  > button {
+    margin-top: 2rem;
+    border: 0;
+    border-radius: 200px;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: $c-white;
+    background: $c-blue;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  > p {
+    margin: 0.25rem 0 0;
+    text-align: center;
+    color: $c-blue;
+  }
+}

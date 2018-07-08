@@ -1,18 +1,14 @@
-<!--
-  Generated template for the AddmoviesPage page.
+<div class="page-body">
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+  <div class="log-form">
+    <h2>Enter The Details</h2>
+    <form>
+      <ion-label> Movie Name </ion-label>
+      <ion-input type="text" name="movieName" [(ngModel)]= "user.movieName"></ion-input>
+      <ion-label> Movie Date </ion-label>
+      <ion-input type="date" name="movieDate" [(ngModel)]= "user.movieDate" ></ion-input>
+      <button type="submit" style="background-color: #2a2a2a;" (click)="databasePush()">Login</button>
+    </form>
+  </div><!--end log form -->
 
-  <ion-navbar>
-    <ion-title>addmovies</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+</div>

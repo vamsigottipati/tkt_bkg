@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabaseModule } from "angularfire2/database";
+import { User } from "../../models/user";
+import { homepage } from "../home/home"
+
+
 
 /**
  * Generated class for the AddmoviesPage page.
@@ -15,11 +20,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddmoviesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user = {} as User;
+
+  constructor(
+    public AngularFireDatabase: AngularFireDatabaseModule,
+    public navCtrl: NavController,
+    public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddmoviesPage');
+  databasePush(user: User) {
+    var databaseRef = AngularFireDatabase.list('movies/' + user.movieDate);
+    this.databaseRef.push({movieName : user.movieName});
+    this.databaseRef.push({movieDate : user.movieDate});
   }
 
 }

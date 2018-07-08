@@ -8,7 +8,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
 import {AdminLoginPage} from "../pages/admin-login/admin-login";
-import {AddmoviesPage} from "../pages/addmovies/addmovies"
+import {AddmoviesPage} from "../pages/addmovies/addmovies";
+
+import { firebaseConfig } from "./app.firebase.config";
+
+import { AngularFireModule } from "angularfire2";
+import { AngularFireAuthModule } from "angularfire2/auth";
+import { AngularFireDatabaseModule } from "angularfire2/database"
+
 
 @NgModule({
   declarations: [
@@ -19,7 +26,10 @@ import {AddmoviesPage} from "../pages/addmovies/addmovies"
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

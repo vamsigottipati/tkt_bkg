@@ -18,12 +18,7 @@ export class AdminLoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AdminLoginPage');
-  }
-
-  movies(){
+  addMoviesRoute() {
     this.navCtrl.push(AddmoviesPage)
   }
 }
